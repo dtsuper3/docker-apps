@@ -3,6 +3,7 @@ version: '3.5'
 services:  
   mysql:
     image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - db_data:/var/lib/mysql
     # restart: always
@@ -13,5 +14,12 @@ services:
       MYSQL_DATABASE: test
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+  
+  # adminer:
+  #   image: adminer
+  #   # restart: always
+  #   ports:
+  #     - 8080:8080
+  
 volumes:
   db_data:
