@@ -1,13 +1,17 @@
 version: '3'
 services:
-  db:
+  postgres:
     image: postgres:13
     ports:
       - 5432:5432
+    volumes:
+       - postgres:/data/postgres
     environment:
       POSTGRES_USER: test
       POSTGRES_PASSWORD: test
-      POSTGRES_DB: test
+      PGDATA: /data/postgres
+      #POSTGRES_DB: test
 
-
+volumes:
+    postgres:
 # docker-compose exec db psql -U test
