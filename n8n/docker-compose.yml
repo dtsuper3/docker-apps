@@ -1,0 +1,14 @@
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "5678:5678"
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+
+
+#  set OLLAMA_HOST=0.0.0.0
+#  ollama serve
