@@ -1,0 +1,55 @@
+services:
+  opensearch-node1:
+    image: opensearchproject/opensearch:2.14.0
+    container_name: opensearch-node1
+    restart: unless-stopped
+    environment:
+      - cluster.name=opensearch-cluster
+      - node.name=opensearch-node1
+      - discovery.type=single-node
+
+      # JVM heap (adjust based on your RAM)
+      - OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g
+
+      # Security config (default demo config enabled)
+      - DISABLE_INSTALL_DEMO_CONFIG=false
+      - DISABLE_SECURITY_PLUGIN=false
+
+      # Admin password (required from v2+)
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=StrongPassword123!
+
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+    volumes:
+      - ./opensearch-data:/usr/share/opensearch/data
+
+    ports:
+      - "9200:9200"   # REST API
+      - "9600:9600"   # Performance Analyzer
+
+    networks:
+      - opensearch-net
+
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:2.14.0
+    container_name: opensearch-dashboards
+    restart: unless-stopped
+    environment:
+      - OPENSEARCH_HOSTS=["https://opensearch-node1:9200"]
+      - OPENSEARCH_USERNAME=admin
+      - OPENSEARCH_PASSWORD=StrongPassword123!
+
+    ports:
+      - "5601:5601"
+
+    networks:
+      - opensearch-net
+
+    depends_on:
+      - opensearch-node1
+
+networks:
+  opensearch-net:
