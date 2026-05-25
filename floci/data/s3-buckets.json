@@ -1,0 +1,23 @@
+{
+  "000000000000/test" : {
+    "name" : "test",
+    "creationDate" : "2026-05-25T12:36:19.886095507Z",
+    "versioningStatus" : null,
+    "tags" : { },
+    "notificationConfiguration" : null,
+    "objectLockEnabled" : false,
+    "defaultRetention" : null,
+    "policy" : null,
+    "corsConfiguration" : null,
+    "lifecycleConfiguration" : null,
+    "transitionDefaultMinimumObjectSize" : null,
+    "acl" : null,
+    "encryptionConfiguration" : null,
+    "publicAccessBlockConfiguration" : null,
+    "ownershipControlsConfiguration" : null,
+    "requestPaymentPayer" : null,
+    "region" : "eu-west-2",
+    "websiteConfiguration" : null,
+    "versioningEnabled" : false
+  }
+}

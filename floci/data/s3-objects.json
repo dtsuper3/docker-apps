@@ -1,0 +1,33 @@
+{
+  "000000000000/test/text.png" : {
+    "bucketName" : "test",
+    "key" : "text.png",
+    "metadata" : { },
+    "contentType" : "application/octet-stream",
+    "contentEncoding" : null,
+    "contentDisposition" : null,
+    "cacheControl" : null,
+    "serverSideEncryption" : null,
+    "size" : 0,
+    "lastModified" : "2026-05-25T12:49:42.421Z",
+    "storageClass" : "STANDARD",
+    "checksum" : {
+      "checksumCRC32" : null,
+      "checksumCRC32C" : null,
+      "checksumCRC64NVME" : "AAAAAAAAAAA=",
+      "checksumSHA1" : null,
+      "checksumSHA256" : null,
+      "checksumType" : "FULL_OBJECT"
+    },
+    "parts" : [ ],
+    "versionId" : null,
+    "deleteMarker" : false,
+    "tags" : { },
+    "objectLockMode" : null,
+    "retainUntilDate" : null,
+    "legalHoldStatus" : null,
+    "acl" : null,
+    "latest" : true,
+    "etag" : "\"d41d8cd98f00b204e9800998ecf8427e\""
+  }
+}
